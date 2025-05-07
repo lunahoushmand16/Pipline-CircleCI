@@ -13,6 +13,9 @@ jobs:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run:
+          name: Install Cypress binary
+          command: npx cypress install
+      - run:
           name: Run tests
           command: npm test --passWithNoTests
   build-node:
