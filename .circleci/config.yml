@@ -11,11 +11,11 @@ jobs:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run:
-          name: Install Xvfb
-          command: sudo apt-get update && sudo apt-get install -y xvfb
-      - run:
           name: Install Cypress binary
           command: npx cypress install
+      - run:
+          name: Install Xvfb for Cypress
+          command: sudo apt-get update && sudo apt-get install -y xvfb
       - run:
           name: Start virtual display (Xvfb)
           command: Xvfb :99 & export DISPLAY=:99
